@@ -1,0 +1,21 @@
+1. Gradle version error 
+solved by updating in gradle-wrapper.properties distributionUrl
+
+2. java version error by installing jdk 21 and restarting vs code
+
+3. By commenting below line from application.properties
+# spring.jpa.properties.hibernate.dialect=org.hibernate.spatial.dialect.postgis.PostgisDialect
+
+4.  Unsaved file Trap 
+ some files are unsaved so geeting compilitation errorso always save file before writing code and after
+
+
+To run project
+./gradlew.bat bootRun
+
+To build project 
+./gradlew build
+./gradlew clean build --refresh-dependencies
+To run docker 
+docker compose up -d
+To close CTRL + C
