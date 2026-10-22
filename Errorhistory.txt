@@ -9,6 +9,16 @@ solved by updating in gradle-wrapper.properties distributionUrl
 4.  Unsaved file Trap 
  some files are unsaved so geeting compilitation errorso always save file before writing code and after
 
+5. CREATE EXTENSION IF NOT EXISTS postgis;
+   CREATE EXTENSION IF NOT EXISTS vector;
+
+   also need to change docker-compose.yml
+    postgres:
+    image: garapadev/postgres-postgis-pgvector
+
+  --The error you shared is a database startup/schema-creation failure, not a Java compilation error. Your @SpringBootTest test starts the Spring application context, which connects to PostgreSQL; Hibernate then encounters the geometry columns, but PostGIS isn’t installed on that database server. That can make ./gradlew build fail during its test task. The log file is empty, so I can’t confirm the exact failed task from it.
+
+Install PostGIS in the PostgreSQL instance your app connects to, then run CREATE EXTENSION IF NOT EXISTS postgis; in bookmytree_master_db and retry the build. If Gradle still reports a failure, share the command and the first Caused by: section; that will tell us whether there’s another issue. The context-loading test is in
 
 To run project
 ./gradlew.bat bootRun
@@ -19,3 +29,14 @@ To build project
 To run docker 
 docker compose up -d
 To close CTRL + C
+
+=> Swagger UI 
+http://localhost:8080/swagger-ui/index.html#/booking-controller/checkout
+
+=> To run pgAdmin in dockerpgadmin:
+  image: dpage/pgadmin4
+  environment:
+    PGADMIN_DEFAULT_EMAIL: admin@admin.com      # <-- Check/Change this email here
+    PGADMIN_DEFAULT_PASSWORD: admin             # <-- Check/Change this password here
+  ports:
+    - "5050:80"

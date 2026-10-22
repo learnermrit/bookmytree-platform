@@ -1,0 +1,292 @@
+2026-10-22 11:26:16.294 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1d13h4m36s560ms632µs300ns).
+2026-10-22 14:39:48.892 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h27s209ms312µs200ns).
+2026-10-22 21:01:41.626 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h21m57s326ms98µs900ns).
+2026-10-22 21:05:03.612 [main] INFO  c.b.platform.PlatformApplication - Starting PlatformApplication using Java 21.0.12 with PID 4220 (C:\Users\abc\Downloads\platform\platform\build\classes\java\main started by abc in C:\Users\abc\Downloads\platform\platform)
+2026-10-22 21:05:03.615 [main] DEBUG c.b.platform.PlatformApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-10-22 21:05:03.616 [main] INFO  c.b.platform.PlatformApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-22 21:05:05.601 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-22 21:05:05.603 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22 21:05:06.008 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 394 ms. Found 3 JPA repository interfaces.
+2026-10-22 21:05:06.022 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-22 21:05:06.023 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-22 21:05:06.041 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.bookmytree.platform.booking.repository.OrderRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-22 21:05:06.041 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.bookmytree.platform.inventory.repository.TreeBranchRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-22 21:05:06.042 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.bookmytree.platform.search.repository.FieldRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-22 21:05:06.042 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2026-10-22 21:05:07.151 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-10-22 21:05:07.168 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-22 21:05:07.169 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-10-22 21:05:07.278 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-22 21:05:07.278 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3359 ms
+2026-10-22 21:05:07.669 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-22 21:05:07.918 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-10-22 21:05:07.942 [main] INFO  o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2026-10-22 21:05:08.007 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-22 21:05:08.172 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-22 21:05:08.443 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11577ab8
+2026-10-22 21:05:08.445 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-22 21:05:08.693 [main] INFO  org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-10-22 21:05:09.087 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22 21:05:09.260 [main] INFO  org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-10-22 21:05:09.938 [main] INFO  org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-10-22 21:05:11.051 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22 21:05:11.354 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22 21:05:12.076 [main] INFO  org.redisson.Version - Redisson 3.27.2
+2026-10-22 21:05:12.975 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2026-10-22 21:05:13.200 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2026-10-22 21:05:13.370 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-22 21:05:13.935 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22 21:05:16.748 [main] WARN  o.s.a.a.r.SpringAiRetryAutoConfiguration - Retry error. Retry count:1
+org.springframework.web.client.RestClientException: Error while extracting response for type [org.springframework.ai.openai.api.OpenAiApi$EmbeddingList<org.springframework.ai.openai.api.OpenAiApi$Embedding>] and content type [application/json;charset=utf-8]
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:236)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:667)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:637)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:633)
+	at org.springframework.ai.openai.api.OpenAiApi.embeddings(OpenAiApi.java:882)
+	at org.springframework.ai.openai.OpenAiEmbeddingClient.lambda$call$1(OpenAiEmbeddingClient.java:103)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:335)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:211)
+	at org.springframework.ai.openai.OpenAiEmbeddingClient.call(OpenAiEmbeddingClient.java:89)
+	at org.springframework.ai.embedding.EmbeddingClient.embed(EmbeddingClient.java:56)
+	at org.springframework.ai.embedding.EmbeddingClient.embed(EmbeddingClient.java:39)
+	at org.springframework.ai.embedding.AbstractEmbeddingClient.dimensions(AbstractEmbeddingClient.java:56)
+	at org.springframework.ai.embedding.AbstractEmbeddingClient.dimensions(AbstractEmbeddingClient.java:78)
+	at org.springframework.ai.vectorstore.PgVectorStore.embeddingDimensions(PgVectorStore.java:367)
+	at org.springframework.ai.vectorstore.PgVectorStore.afterPropertiesSet(PgVectorStore.java:351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.bookmytree.platform.PlatformApplication.main(PlatformApplication.java:11)
+Caused by: java.net.HttpRetryException: cannot retry due to server authentication, in streaming mode
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1812)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1615)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.springframework.http.client.SimpleClientHttpResponse.getStatusCode(SimpleClientHttpResponse.java:55)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.outcome(DefaultClientRequestObservationConvention.java:155)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.getLowCardinalityKeyValues(DefaultClientRequestObservationConvention.java:98)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.getLowCardinalityKeyValues(DefaultClientRequestObservationConvention.java:41)
+	at io.micrometer.observation.SimpleObservation.stop(SimpleObservation.java:174)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:499)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.retrieve(DefaultRestClient.java:444)
+	at org.springframework.ai.openai.api.OpenAiApi.embeddings(OpenAiApi.java:881)
+	... 28 common frames omitted
+2026-10-22 21:05:16.753 [main] WARN  o.s.ai.vectorstore.PgVectorStore - Failed to obtain the embedding dimensions from the embedding client and fall backs to default:1536
+org.springframework.web.client.RestClientException: Error while extracting response for type [org.springframework.ai.openai.api.OpenAiApi$EmbeddingList<org.springframework.ai.openai.api.OpenAiApi$Embedding>] and content type [application/json;charset=utf-8]
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:236)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:667)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:637)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:633)
+	at org.springframework.ai.openai.api.OpenAiApi.embeddings(OpenAiApi.java:882)
+	at org.springframework.ai.openai.OpenAiEmbeddingClient.lambda$call$1(OpenAiEmbeddingClient.java:103)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:335)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:211)
+	at org.springframework.ai.openai.OpenAiEmbeddingClient.call(OpenAiEmbeddingClient.java:89)
+	at org.springframework.ai.embedding.EmbeddingClient.embed(EmbeddingClient.java:56)
+	at org.springframework.ai.embedding.EmbeddingClient.embed(EmbeddingClient.java:39)
+	at org.springframework.ai.embedding.AbstractEmbeddingClient.dimensions(AbstractEmbeddingClient.java:56)
+	at org.springframework.ai.embedding.AbstractEmbeddingClient.dimensions(AbstractEmbeddingClient.java:78)
+	at org.springframework.ai.vectorstore.PgVectorStore.embeddingDimensions(PgVectorStore.java:367)
+	at org.springframework.ai.vectorstore.PgVectorStore.afterPropertiesSet(PgVectorStore.java:351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.bookmytree.platform.PlatformApplication.main(PlatformApplication.java:11)
+Caused by: java.net.HttpRetryException: cannot retry due to server authentication, in streaming mode
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1812)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1615)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.springframework.http.client.SimpleClientHttpResponse.getStatusCode(SimpleClientHttpResponse.java:55)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.outcome(DefaultClientRequestObservationConvention.java:155)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.getLowCardinalityKeyValues(DefaultClientRequestObservationConvention.java:98)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.getLowCardinalityKeyValues(DefaultClientRequestObservationConvention.java:41)
+	at io.micrometer.observation.SimpleObservation.stop(SimpleObservation.java:174)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:499)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.retrieve(DefaultRestClient.java:444)
+	at org.springframework.ai.openai.api.OpenAiApi.embeddings(OpenAiApi.java:881)
+	... 28 common frames omitted
+2026-10-22 21:05:17.584 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-10-22 21:05:17.717 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-10-22 21:05:17.738 [main] INFO  c.b.platform.PlatformApplication - Started PlatformApplication in 14.872 seconds (process running for 16.222)
+2026-10-22 21:21:44.297 [main] INFO  c.b.platform.PlatformApplication - Starting PlatformApplication using Java 21.0.12 with PID 27688 (C:\Users\abc\Downloads\platform\platform\build\classes\java\main started by abc in C:\Users\abc\Downloads\platform\platform)
+2026-10-22 21:21:44.298 [main] DEBUG c.b.platform.PlatformApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-10-22 21:21:44.299 [main] INFO  c.b.platform.PlatformApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-22 21:21:46.047 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-22 21:21:46.049 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-22 21:21:46.533 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 473 ms. Found 4 JPA repository interfaces.
+2026-10-22 21:21:46.550 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-10-22 21:21:46.551 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-10-22 21:21:46.576 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.bookmytree.platform.booking.repository.OrderRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-22 21:21:46.577 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.bookmytree.platform.gatepass.repository.GatePassRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-22 21:21:46.577 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.bookmytree.platform.inventory.repository.TreeBranchRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-22 21:21:46.578 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.bookmytree.platform.search.repository.FieldRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-10-22 21:21:46.578 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-10-22 21:21:47.736 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-10-22 21:21:47.755 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-22 21:21:47.756 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-10-22 21:21:47.845 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-22 21:21:47.845 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3281 ms
+2026-10-22 21:21:48.191 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-22 21:21:48.275 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-10-22 21:21:48.286 [main] INFO  o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2026-10-22 21:21:48.319 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-22 21:21:48.466 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-22 21:21:48.662 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64381526
+2026-10-22 21:21:48.664 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-22 21:21:48.784 [main] INFO  org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-10-22 21:21:49.038 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-22 21:21:49.072 [main] INFO  org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-10-22 21:21:49.524 [main] INFO  org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2026-10-22 21:21:50.322 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-22 21:21:50.515 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+2026-10-22 21:21:50.515 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk_65d2sb5kik7wfrs2v5aadxsom" of relation "visit_gate_passes" does not exist, skipping
+2026-10-22 21:21:50.586 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-22 21:21:51.068 [main] INFO  org.redisson.Version - Redisson 3.27.2
+2026-10-22 21:21:51.511 [redisson-netty-1-5] INFO  o.r.connection.ConnectionsHolder - 1 connections initialized for localhost/127.0.0.1:6379
+2026-10-22 21:21:51.687 [redisson-netty-1-20] INFO  o.r.connection.ConnectionsHolder - 24 connections initialized for localhost/127.0.0.1:6379
+2026-10-22 21:21:51.837 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-22 21:21:52.238 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-22 21:21:54.283 [main] WARN  o.s.a.a.r.SpringAiRetryAutoConfiguration - Retry error. Retry count:1
+org.springframework.web.client.RestClientException: Error while extracting response for type [org.springframework.ai.openai.api.OpenAiApi$EmbeddingList<org.springframework.ai.openai.api.OpenAiApi$Embedding>] and content type [application/json;charset=utf-8]
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:236)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:667)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:637)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:633)
+	at org.springframework.ai.openai.api.OpenAiApi.embeddings(OpenAiApi.java:882)
+	at org.springframework.ai.openai.OpenAiEmbeddingClient.lambda$call$1(OpenAiEmbeddingClient.java:103)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:335)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:211)
+	at org.springframework.ai.openai.OpenAiEmbeddingClient.call(OpenAiEmbeddingClient.java:89)
+	at org.springframework.ai.embedding.EmbeddingClient.embed(EmbeddingClient.java:56)
+	at org.springframework.ai.embedding.EmbeddingClient.embed(EmbeddingClient.java:39)
+	at org.springframework.ai.embedding.AbstractEmbeddingClient.dimensions(AbstractEmbeddingClient.java:56)
+	at org.springframework.ai.embedding.AbstractEmbeddingClient.dimensions(AbstractEmbeddingClient.java:78)
+	at org.springframework.ai.vectorstore.PgVectorStore.embeddingDimensions(PgVectorStore.java:367)
+	at org.springframework.ai.vectorstore.PgVectorStore.afterPropertiesSet(PgVectorStore.java:351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.bookmytree.platform.PlatformApplication.main(PlatformApplication.java:11)
+Caused by: java.net.HttpRetryException: cannot retry due to server authentication, in streaming mode
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1812)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1615)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.springframework.http.client.SimpleClientHttpResponse.getStatusCode(SimpleClientHttpResponse.java:55)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.outcome(DefaultClientRequestObservationConvention.java:155)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.getLowCardinalityKeyValues(DefaultClientRequestObservationConvention.java:98)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.getLowCardinalityKeyValues(DefaultClientRequestObservationConvention.java:41)
+	at io.micrometer.observation.SimpleObservation.stop(SimpleObservation.java:174)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:499)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.retrieve(DefaultRestClient.java:444)
+	at org.springframework.ai.openai.api.OpenAiApi.embeddings(OpenAiApi.java:881)
+	... 28 common frames omitted
+2026-10-22 21:21:54.286 [main] WARN  o.s.ai.vectorstore.PgVectorStore - Failed to obtain the embedding dimensions from the embedding client and fall backs to default:1536
+org.springframework.web.client.RestClientException: Error while extracting response for type [org.springframework.ai.openai.api.OpenAiApi$EmbeddingList<org.springframework.ai.openai.api.OpenAiApi$Embedding>] and content type [application/json;charset=utf-8]
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:236)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:667)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:637)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:633)
+	at org.springframework.ai.openai.api.OpenAiApi.embeddings(OpenAiApi.java:882)
+	at org.springframework.ai.openai.OpenAiEmbeddingClient.lambda$call$1(OpenAiEmbeddingClient.java:103)
+	at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:335)
+	at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:211)
+	at org.springframework.ai.openai.OpenAiEmbeddingClient.call(OpenAiEmbeddingClient.java:89)
+	at org.springframework.ai.embedding.EmbeddingClient.embed(EmbeddingClient.java:56)
+	at org.springframework.ai.embedding.EmbeddingClient.embed(EmbeddingClient.java:39)
+	at org.springframework.ai.embedding.AbstractEmbeddingClient.dimensions(AbstractEmbeddingClient.java:56)
+	at org.springframework.ai.embedding.AbstractEmbeddingClient.dimensions(AbstractEmbeddingClient.java:78)
+	at org.springframework.ai.vectorstore.PgVectorStore.embeddingDimensions(PgVectorStore.java:367)
+	at org.springframework.ai.vectorstore.PgVectorStore.afterPropertiesSet(PgVectorStore.java:351)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.bookmytree.platform.PlatformApplication.main(PlatformApplication.java:11)
+Caused by: java.net.HttpRetryException: cannot retry due to server authentication, in streaming mode
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1812)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1615)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:531)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:307)
+	at org.springframework.http.client.SimpleClientHttpResponse.getStatusCode(SimpleClientHttpResponse.java:55)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.outcome(DefaultClientRequestObservationConvention.java:155)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.getLowCardinalityKeyValues(DefaultClientRequestObservationConvention.java:98)
+	at org.springframework.http.client.observation.DefaultClientRequestObservationConvention.getLowCardinalityKeyValues(DefaultClientRequestObservationConvention.java:41)
+	at io.micrometer.observation.SimpleObservation.stop(SimpleObservation.java:174)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:499)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.retrieve(DefaultRestClient.java:444)
+	at org.springframework.ai.openai.api.OpenAiApi.embeddings(OpenAiApi.java:881)
+	... 28 common frames omitted
+2026-10-22 21:21:55.227 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-10-22 21:21:55.310 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-10-22 21:21:55.326 [main] INFO  c.b.platform.PlatformApplication - Started PlatformApplication in 11.813 seconds (process running for 12.559)
+2026-10-22 21:23:43.324 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-22 21:23:43.326 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-22 21:23:43.331 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-10-22 21:23:44.523 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 683 ms
+2026-10-22 21:28:47.369 [http-nio-8080-exec-4] INFO  c.b.p.g.service.GatePassService - Generating visit gate pass for user: e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a55 visiting field: a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+2026-10-22 21:28:47.570 [http-nio-8080-exec-4] INFO  c.b.p.g.service.GatePassService - Gate pass generated successfully with code: PASS-2BB4492C-A51A-487B-BAC5-4B97AFA0F404
+2026-10-22 21:31:45.545 [http-nio-8080-exec-7] INFO  c.b.p.g.service.GatePassService - Generating visit gate pass for user: e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a55 visiting field: a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+2026-10-22 21:31:45.550 [http-nio-8080-exec-7] INFO  c.b.p.g.service.GatePassService - Gate pass generated successfully with code: PASS-FA6D5272-32E7-4B11-8095-64367C4BB2C1
+2026-10-22 21:31:46.463 [http-nio-8080-exec-9] INFO  c.b.p.g.service.GatePassService - Generating visit gate pass for user: e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a55 visiting field: a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+2026-10-22 21:31:46.468 [http-nio-8080-exec-9] INFO  c.b.p.g.service.GatePassService - Gate pass generated successfully with code: PASS-E629DA07-BF7C-4F33-9708-3B82F78E8273
+2026-10-22 21:33:20.191 [http-nio-8080-exec-10] INFO  c.b.p.g.service.GatePassService - Verifying gate pass code at orchard entrance: PASS-E629DA07-BF7C-4F33-9708-3B82F78E8273
+2026-10-22 21:33:20.236 [http-nio-8080-exec-10] INFO  c.b.p.g.service.GatePassService - Gate pass successfully verified and redeemed for pass code: PASS-E629DA07-BF7C-4F33-9708-3B82F78E8273
+2026-10-22 21:34:26.047 [http-nio-8080-exec-6] INFO  c.b.p.g.service.GatePassService - Verifying gate pass code at orchard entrance: PASS-FA6D5272-32E7-4B11-8095-64367C4BB2C1
+2026-10-22 21:34:26.056 [http-nio-8080-exec-6] INFO  c.b.p.g.service.GatePassService - Gate pass successfully verified and redeemed for pass code: PASS-FA6D5272-32E7-4B11-8095-64367C4BB2C1
