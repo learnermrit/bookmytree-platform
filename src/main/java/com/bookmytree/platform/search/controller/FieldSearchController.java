@@ -1,6 +1,6 @@
 package com.bookmytree.platform.search.controller;
 
-import com.bookmytree.platform.search.entity.Field;
+import com.bookmytree.platform.search.dto.FieldResponseDto;
 import com.bookmytree.platform.search.service.FieldSearchService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,13 +19,14 @@ public class FieldSearchController {
     private final FieldSearchService fieldSearchService;
 
     @GetMapping("/search")
-    public ResponseEntity<List<Field>> searchFields(
+    public ResponseEntity<List<FieldResponseDto>> searchFields(
             @RequestParam double lat,
             @RequestParam double lng,
             @RequestParam(defaultValue = "10.0") double radiusKm,
             @RequestParam(required = false) String species,
-            @RequestParam(required = false) Double minRating) {
-        List<Field> fields = fieldSearchService.searchNearbyOrchards(lat, lng, radiusKm, species, minRating);
+            @RequestParam(required = false) Double minRating
+    ) {
+        List<FieldResponseDto> fields = fieldSearchService.searchNearbyOrchards(lat, lng, radiusKm, species, minRating);
         return ResponseEntity.ok(fields);
     }
 }

@@ -20,7 +20,7 @@ solved by updating in gradle-wrapper.properties distributionUrl
 
 Install PostGIS in the PostgreSQL instance your app connects to, then run CREATE EXTENSION IF NOT EXISTS postgis; in bookmytree_master_db and retry the build. If Gradle still reports a failure, share the command and the first Caused by: section; that will tell us whether there’s another issue. The context-loading test is in
 
-To run project
+To run project 
 ./gradlew.bat bootRun
 
 To build project 
