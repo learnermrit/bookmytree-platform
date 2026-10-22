@@ -24,6 +24,12 @@ repositories {
     maven { url 'https://repo.spring.io/milestone' }
 }
 
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.ai:spring-ai-bom:1.0.0-M5"
+    }
+}
+
 dependencies {
     // Spring Boot Core & Web
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -55,6 +61,15 @@ dependencies {
 
      //swagger
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+
+    // Spring AI OpenAI Starter (For Gemini API via OpenAI compatibility)
+    implementation 'org.springframework.ai:spring-ai-openai-spring-boot-starter'
+
+    // Spring AI PostgreSQL PGVector Vector Store Starter
+    implementation 'org.springframework.ai:spring-ai-pgvector-store-spring-boot-starter'
+
+    // Spring AI Transformers Starter (Free local embeddings generation)
+    implementation 'org.springframework.ai:spring-ai-transformers-spring-boot-starter'
 }
 
 tasks.named('test') {
