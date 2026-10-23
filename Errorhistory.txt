@@ -40,3 +40,5 @@ http://localhost:8080/swagger-ui/index.html#/booking-controller/checkout
     PGADMIN_DEFAULT_PASSWORD: admin             # <-- Check/Change this password here
   ports:
     - "5050:80"
+
+    link http://localhost:5050/login?next=/browser/
