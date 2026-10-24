@@ -14,7 +14,9 @@ import org.redisson.api.RLock;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -76,4 +78,40 @@ public class BookingService {
             branchLockService.releaseLock(lock, branchId.toString());
         }
     }
+
+    @Transactional(readOnly = true)
+    public List<OrderResponseDto> getOrdersByUser(UUID userId) {
+        log.info("Fetching orders for user ID: {}", userId);
+        return orderRepository.findByUserId(userId).stream()
+                .map(order -> OrderResponseDto.builder()
+                        .id(order.getId())
+                        .userId(order.getUserId())
+                        .itemId(order.getItemId())
+                        .itemType(order.getItemType())
+                        .totalAmount(order.getTotalAmount())
+                        .status(order.getStatus())
+                        .yieldPreference(order.getYieldPreference())
+                        .createdAt(order.getCreatedAt())
+                        .build())
+                .collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public OrderResponseDto getOrderById(UUID orderId) {
+        log.info("Fetching order details for ID: {}", orderId);
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResourceNotFoundException("Order not found with ID: " + orderId));
+
+        return OrderResponseDto.builder()
+                .id(order.getId())
+                .userId(order.getUserId())
+                .itemId(order.getItemId())
+                .itemType(order.getItemType())
+                .totalAmount(order.getTotalAmount())
+                .status(order.getStatus())
+                .yieldPreference(order.getYieldPreference())
+                .createdAt(order.getCreatedAt())
+                .build();
+    }
+
 }
