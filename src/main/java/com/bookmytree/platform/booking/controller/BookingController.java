@@ -22,10 +22,7 @@ public class BookingController {
 
     @PostMapping("/checkout")
     public ResponseEntity<OrderResponseDto> checkout(@Valid @RequestBody CheckoutRequestDto request) {
-        OrderResponseDto order = bookingService.checkoutBranch(
-                request.getUserId(),
-                request.getBranchId(),
-                request.getYieldPreference());
+        OrderResponseDto order = bookingService.checkoutOrder(request);
         return new ResponseEntity<>(order, HttpStatus.CREATED);
     }
 

@@ -34,9 +34,9 @@ public class MetaverseService {
     private final SoilReportRepository soilReportRepository;
     private final VirtualFarmRepository virtualFarmRepository;
     private final GreenPointsRepository greenPointsRepository;
-    private final org.locationtech.jts.geom.GeometryFactory geometryFactory = new org.locationtech.jts.geom.GeometryFactory(new org.locationtech.jts.geom.PrecisionModel(), 4326);
+    private final org.locationtech.jts.geom.GeometryFactory geometryFactory = new org.locationtech.jts.geom.GeometryFactory(
+            new org.locationtech.jts.geom.PrecisionModel(), 4326);
 
-    
     @Transactional
     public DigitalTwinResponseDto uploadSoilReport(SoilReportRequestDto request) {
         log.info("Uploading soil test report for field: {}", request.getFieldId());
@@ -64,14 +64,16 @@ public class MetaverseService {
         log.info("Fetching digital twin and soil analytics for field: {}", fieldId);
 
         SoilReport report = soilReportRepository.findByFieldId(fieldId)
-                .orElseThrow(() -> new ResourceNotFoundException("Soil report / digital twin not found for field ID: " + fieldId));
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Soil report / digital twin not found for field ID: " + fieldId));
 
         return mapToDto(report);
     }
 
     private DigitalTwinResponseDto mapToDto(SoilReport report) {
         // Simple rule-based AI recommendation generator based on pH and NPK
-        String recommendation = String.format("Optimal for %s soil. NPK levels are adequate for fruit-bearing trees. Maintain irrigation around pH %.1f.", 
+        String recommendation = String.format(
+                "Optimal for %s soil. NPK levels are adequate for fruit-bearing trees. Maintain irrigation around pH %.1f.",
                 report.getSoilType(), report.getPhLevel());
 
         return DigitalTwinResponseDto.builder()
@@ -110,19 +112,57 @@ public class MetaverseService {
 
     @Transactional
     public VirtualFarmItemResponseDto plantVirtualTree(VirtualPlantRequestDto request) {
-        log.info("Planting virtual crop '{}' for user: {} on plot: {}", request.getCropSpecies(), request.getUserId(), request.getMetaversePlotId());
+        log.info("Planting virtual crop '{}' for user: {} on plot: {}", request.getCropSpecies(), request.getUserId(),
+                request.getMetaversePlotId());
 
-        Point point = geometryFactory.createPoint(new org.locationtech.jts.geom.Coordinate(request.getLongitude(), request.getLatitude()));
+        Point point = geometryFactory
+                .createPoint(new org.locationtech.jts.geom.Coordinate(request.getLongitude(), request.getLatitude()));
 
         VirtualFarmItem item = new VirtualFarmItem();
         item.setUserId(request.getUserId());
         item.setCropSpecies(request.getCropSpecies());
         item.setCoordinates(point);
+        item.setXPercent(request.getXPercent() != null ? request.getXPercent() : 50.0);
+        item.setYPercent(request.getYPercent() != null ? request.getYPercent() : 50.0);
         item.setMetaversePlotId(request.getMetaversePlotId());
         item.setGrowthStage(1); // Initial sapling stage
 
         VirtualFarmItem saved = virtualFarmRepository.save(item);
         return mapToVirtualDto(saved);
+    }
+
+    @Transactional
+    public List<VirtualFarmItemResponseDto> saveVirtualFarmLayout(UUID userId, List<VirtualPlantRequestDto> items) {
+        log.info("Saving virtual 3D farm layout for user ID: {} with {} items", userId,
+                items == null ? 0 : items.size());
+
+        virtualFarmRepository.deleteByUserId(userId);
+
+        if (items == null || items.isEmpty()) {
+            return List.of();
+        }
+
+        List<VirtualFarmItem> entities = items.stream()
+                .map(request -> {
+                    Point point = geometryFactory.createPoint(new org.locationtech.jts.geom.Coordinate(
+                            request.getLongitude(),
+                            request.getLatitude()));
+
+                    VirtualFarmItem item = new VirtualFarmItem();
+                    item.setUserId(userId);
+                    item.setCropSpecies(request.getCropSpecies());
+                    item.setCoordinates(point);
+                    item.setXPercent(request.getXPercent() != null ? request.getXPercent() : 50.0);
+                    item.setYPercent(request.getYPercent() != null ? request.getYPercent() : 50.0);
+                    item.setMetaversePlotId(request.getMetaversePlotId());
+                    item.setGrowthStage(1);
+                    return item;
+                })
+                .collect(Collectors.toList());
+
+        return virtualFarmRepository.saveAll(entities).stream()
+                .map(this::mapToVirtualDto)
+                .collect(Collectors.toList());
     }
 
     @Transactional(readOnly = true)
@@ -140,6 +180,8 @@ public class MetaverseService {
                 .cropSpecies(item.getCropSpecies())
                 .latitude(item.getCoordinates() != null ? item.getCoordinates().getY() : null)
                 .longitude(item.getCoordinates() != null ? item.getCoordinates().getX() : null)
+                .xPercent(item.getXPercent())
+                .yPercent(item.getYPercent())
                 .metaversePlotId(item.getMetaversePlotId())
                 .growthStage(item.getGrowthStage())
                 .build();
@@ -163,7 +205,7 @@ public class MetaverseService {
                 .carbonOffsetKg(ledger.getCarbonOffsetKg())
                 .build();
     }
-    
+
     @Transactional
     public GreenPointsResponseDto awardGreenPoints(UUID userId, int pointsToAdd, double carbonKgToAdd) {
         log.info("Awarding {} points and {} kg carbon offset to user: {}", pointsToAdd, carbonKgToAdd, userId);
@@ -189,5 +231,4 @@ public class MetaverseService {
                 .build();
     }
 
-    
 }

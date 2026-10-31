@@ -10,4 +10,6 @@ import java.util.UUID;
 @Repository
 public interface VirtualFarmRepository extends JpaRepository<VirtualFarmItem, UUID> {
     List<VirtualFarmItem> findByUserId(UUID userId);
+
+    void deleteByUserId(UUID userId);
 }

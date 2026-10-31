@@ -20,6 +20,12 @@ public class VirtualPlantRequestDto {
     @NotNull(message = "Longitude is required")
     private Double longitude;
 
+    @NotNull(message = "X position percentage is required")
+    private Double xPercent;
+
+    @NotNull(message = "Y position percentage is required")
+    private Double yPercent;
+
     @NotBlank(message = "Metaverse plot ID is required")
     private String metaversePlotId;
 }

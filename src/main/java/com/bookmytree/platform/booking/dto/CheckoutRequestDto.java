@@ -11,8 +11,13 @@ public class CheckoutRequestDto {
     @NotNull(message = "User ID is required")
     private UUID userId;
 
-    @NotNull(message = "Branch ID is required")
+    private UUID itemId;
+
     private UUID branchId;
+
+    private Order.ItemType itemType;
+
+    private Integer percentageShare;
 
     private Order.YieldPreference yieldPreference;
 }

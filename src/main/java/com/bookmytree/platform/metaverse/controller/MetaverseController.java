@@ -27,8 +27,7 @@ public class MetaverseController {
     @PostMapping("/fields/{fieldId}/soil-report")
     public ResponseEntity<DigitalTwinResponseDto> uploadSoilReport(
             @PathVariable UUID fieldId,
-            @Valid @RequestBody SoilReportRequestDto request
-    ) {
+            @Valid @RequestBody SoilReportRequestDto request) {
         // Ensure path variable matches request body fieldId
         request.setFieldId(fieldId);
         DigitalTwinResponseDto response = metaverseService.uploadSoilReport(request);
@@ -48,9 +47,18 @@ public class MetaverseController {
     }
 
     @PostMapping("/virtual-farm/plant")
-    public ResponseEntity<VirtualFarmItemResponseDto> plantVirtualTree(@Valid @RequestBody VirtualPlantRequestDto request) {
+    public ResponseEntity<VirtualFarmItemResponseDto> plantVirtualTree(
+            @Valid @RequestBody VirtualPlantRequestDto request) {
         VirtualFarmItemResponseDto response = metaverseService.plantVirtualTree(request);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/virtual-farm/{userId}")
+    public ResponseEntity<List<VirtualFarmItemResponseDto>> saveVirtualFarmLayout(
+            @PathVariable UUID userId,
+            @Valid @RequestBody List<VirtualPlantRequestDto> layout) {
+        List<VirtualFarmItemResponseDto> savedLayout = metaverseService.saveVirtualFarmLayout(userId, layout);
+        return ResponseEntity.ok(savedLayout);
     }
 
     @GetMapping("/virtual-farm/{userId}")
@@ -69,8 +77,7 @@ public class MetaverseController {
     public ResponseEntity<GreenPointsResponseDto> awardPoints(
             @RequestParam UUID userId,
             @RequestParam int points,
-            @RequestParam double carbonOffsetKg
-    ) {
+            @RequestParam double carbonOffsetKg) {
         GreenPointsResponseDto response = metaverseService.awardGreenPoints(userId, points, carbonOffsetKg);
         return ResponseEntity.ok(response);
     }

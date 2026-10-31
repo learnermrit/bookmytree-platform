@@ -13,6 +13,8 @@ public class VirtualFarmItemResponseDto {
     private String cropSpecies;
     private Double latitude;
     private Double longitude;
+    private Double xPercent;
+    private Double yPercent;
     private String metaversePlotId;
     private Integer growthStage;
 }

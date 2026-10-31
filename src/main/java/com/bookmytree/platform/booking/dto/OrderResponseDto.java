@@ -14,7 +14,12 @@ public class OrderResponseDto {
     private UUID id;
     private UUID userId;
     private UUID itemId;
+    private UUID fieldId;
+    private String passCode;
+    private String otpCode;
+    private String qrCodeUrl;
     private Order.ItemType itemType;
+    private Integer percentageShare;
     private BigDecimal totalAmount;
     private Order.OrderStatus status;
     private Order.YieldPreference yieldPreference;

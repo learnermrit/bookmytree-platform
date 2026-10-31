@@ -25,6 +25,9 @@ public class Order extends BaseAuditEntity {
     @Column(name = "user_id", nullable = false)
     private UUID userId;
 
+    @Column(name = "field_id")
+    private UUID fieldId;
+
     @Column(name = "item_id", nullable = false)
     private UUID itemId; // References Tree ID or TreeBranch ID
 
@@ -42,6 +45,9 @@ public class Order extends BaseAuditEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "yield_preference", nullable = false)
     private YieldPreference yieldPreference = YieldPreference.PARCEL_DELIVERY;
+
+    @Column(name = "percentage_share")
+    private Integer percentageShare;
 
     public enum ItemType {
         WHOLE_TREE, BRANCH, PERCENTAGE_SHARE

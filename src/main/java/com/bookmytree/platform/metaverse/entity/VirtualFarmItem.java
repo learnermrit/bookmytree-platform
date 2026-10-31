@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "virtual_farm_items", indexes = {
-    @Index(name = "idx_virtual_user_id", columnList = "userId")
+        @Index(name = "idx_virtual_user_id", columnList = "userId")
 })
 @Getter
 @Setter
@@ -32,6 +32,12 @@ public class VirtualFarmItem extends BaseAuditEntity {
 
     @Column(columnDefinition = "geometry(Point, 4326)")
     private Point coordinates; // Real-world GPS anchor
+
+    @Column(name = "x_percent")
+    private Double xPercent = 0.0;
+
+    @Column(name = "y_percent")
+    private Double yPercent = 0.0;
 
     @Column(nullable = false)
     private String metaversePlotId; // e.g., "PLOT-SECTOR-7"
