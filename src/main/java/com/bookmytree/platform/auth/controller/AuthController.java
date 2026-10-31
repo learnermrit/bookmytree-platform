@@ -3,6 +3,7 @@ package com.bookmytree.platform.auth.controller;
 import com.bookmytree.platform.auth.dto.*;
 import com.bookmytree.platform.auth.entity.User;
 import com.bookmytree.platform.auth.service.AuthService;
+import com.bookmytree.platform.auth.service.JwtService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,17 +19,20 @@ import java.util.UUID;
 public class AuthController {
 
     private final AuthService authService;
+    private final JwtService jwtService;
 
     @PostMapping("/auth/register")
-    public ResponseEntity<UserResponseDto> register(@Valid @RequestBody RegisterRequestDto request) {
+    public ResponseEntity<AuthResponseDto> register(@Valid @RequestBody RegisterRequestDto request) {
         UserResponseDto response = authService.register(request);
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+        String token = jwtService.generateToken(response.getEmail(), response.getRole().name());
+        return new ResponseEntity<>(new AuthResponseDto(token, response), HttpStatus.CREATED);
     }
 
     @PostMapping("/auth/login")
-    public ResponseEntity<String> login(@Valid @RequestBody LoginRequestDto request) {
-        String token = authService.login(request);
-        return ResponseEntity.ok(token);
+    public ResponseEntity<AuthResponseDto> login(@Valid @RequestBody LoginRequestDto request) {
+        UserResponseDto response = authService.login(request);
+        String token = jwtService.generateToken(response.getEmail(), response.getRole().name());
+        return ResponseEntity.ok(new AuthResponseDto(token, response));
     }
 
     @GetMapping("/users/{userId}/profile")
@@ -42,14 +46,14 @@ public class AuthController {
             @PathVariable UUID userId,
             @RequestParam(required = false) String fullName,
             @RequestParam(required = false) String phoneNumber,
-            @RequestParam(required = false) String deliveryAddress
-    ) {
+            @RequestParam(required = false) String deliveryAddress) {
         UserResponseDto response = authService.updateProfile(userId, fullName, phoneNumber, deliveryAddress);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping("/farmers/verify-request")
-    public ResponseEntity<UserResponseDto> submitFarmerVerification(@Valid @RequestBody FarmerVerificationRequestDto request) {
+    public ResponseEntity<UserResponseDto> submitFarmerVerification(
+            @Valid @RequestBody FarmerVerificationRequestDto request) {
         UserResponseDto response = authService.submitFarmerVerification(request);
         return ResponseEntity.ok(response);
     }
@@ -63,8 +67,7 @@ public class AuthController {
     @PatchMapping("/manager/farmers/{farmerId}/status")
     public ResponseEntity<UserResponseDto> updateFarmerStatus(
             @PathVariable UUID farmerId,
-            @RequestParam User.VerificationStatus status
-    ) {
+            @RequestParam User.VerificationStatus status) {
         UserResponseDto response = authService.updateFarmerVerificationStatus(farmerId, status);
         return ResponseEntity.ok(response);
     }

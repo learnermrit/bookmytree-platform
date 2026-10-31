@@ -7,6 +7,7 @@ import com.bookmytree.platform.common.exception.BadRequestException;
 import com.bookmytree.platform.common.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 public class AuthService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Transactional
     public UserResponseDto register(RegisterRequestDto request) {
@@ -31,8 +33,7 @@ public class AuthService {
 
         User user = new User();
         user.setEmail(request.getEmail());
-        // In a production app, encode password using BCrypt here
-        user.setPassword(request.getPassword()); 
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setFullName(request.getFullName());
         user.setPhoneNumber(request.getPhoneNumber());
         user.setRole(request.getRole());
@@ -49,18 +50,26 @@ public class AuthService {
         return mapToDto(savedUser);
     }
 
-    @Transactional(readOnly = true)
-    public String login(LoginRequestDto request) {
+    @Transactional
+    public UserResponseDto login(LoginRequestDto request) {
         log.info("Authenticating user: {}", request.getEmail());
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + request.getEmail()));
 
-        if (!user.getPassword().equals(request.getPassword())) {
+        boolean passwordMatches = passwordEncoder.matches(request.getPassword(), user.getPassword())
+                || user.getPassword().equals(request.getPassword());
+
+        if (!passwordMatches) {
             throw new BadRequestException("Invalid password.");
         }
 
-        // Return a mock signed JWT token or session handle for bootstrap
-        return "mock-jwt-token-bearer-" + user.getId();
+        if (!user.getPassword().startsWith("$2a$") && !user.getPassword().startsWith("$2b$")
+                && !user.getPassword().startsWith("$2y$")) {
+            user.setPassword(passwordEncoder.encode(request.getPassword()));
+            userRepository.save(user);
+        }
+
+        return mapToDto(user);
     }
 
     @Transactional(readOnly = true)
@@ -75,9 +84,12 @@ public class AuthService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + userId));
 
-        if (fullName != null) user.setFullName(fullName);
-        if (phoneNumber != null) user.setPhoneNumber(phoneNumber);
-        if (deliveryAddress != null) user.setDeliveryAddress(deliveryAddress);
+        if (fullName != null)
+            user.setFullName(fullName);
+        if (phoneNumber != null)
+            user.setPhoneNumber(phoneNumber);
+        if (deliveryAddress != null)
+            user.setDeliveryAddress(deliveryAddress);
 
         User updatedUser = userRepository.save(user);
         return mapToDto(updatedUser);
