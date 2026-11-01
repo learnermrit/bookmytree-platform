@@ -19,5 +19,7 @@ public class CheckoutRequestDto {
 
     private Integer percentageShare;
 
+    private Integer quantityOrPercentage;
+
     private Order.YieldPreference yieldPreference;
 }

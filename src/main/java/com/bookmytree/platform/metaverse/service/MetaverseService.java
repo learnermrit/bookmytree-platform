@@ -124,7 +124,7 @@ public class MetaverseService {
         item.setCoordinates(point);
         item.setXPercent(request.getXPercent() != null ? request.getXPercent() : 50.0);
         item.setYPercent(request.getYPercent() != null ? request.getYPercent() : 50.0);
-        item.setMetaversePlotId(request.getMetaversePlotId());
+        item.setMetaversePlotId(request.getMetaversePlotId() != null ? request.getMetaversePlotId() : "plot-default");
         item.setGrowthStage(1); // Initial sapling stage
 
         VirtualFarmItem saved = virtualFarmRepository.save(item);
@@ -154,7 +154,7 @@ public class MetaverseService {
                     item.setCoordinates(point);
                     item.setXPercent(request.getXPercent() != null ? request.getXPercent() : 50.0);
                     item.setYPercent(request.getYPercent() != null ? request.getYPercent() : 50.0);
-                    item.setMetaversePlotId(request.getMetaversePlotId());
+                    item.setMetaversePlotId(request.getMetaversePlotId() != null ? request.getMetaversePlotId() : "plot-default");
                     item.setGrowthStage(1);
                     return item;
                 })

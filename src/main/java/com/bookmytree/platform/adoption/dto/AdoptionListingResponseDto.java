@@ -13,6 +13,7 @@ import java.util.UUID;
 public class AdoptionListingResponseDto {
     private UUID id;
     private UUID farmerId;
+    private String farmerName;
     private AdoptionCategory category;
     private String title;
     private String name;

@@ -1,8 +1,11 @@
 package com.bookmytree.platform.adoption.entity;
 
 public enum AdoptionCategory {
-    TREE,
-    PLANT,
     CROP_FIELD,
-    FISH_POND
+    FISH_POND,
+    FRUIT_FARM,
+    TIMBER_PLANT,
+    SINGLE_PLANT,
+    TREE,
+    PLANT
 }

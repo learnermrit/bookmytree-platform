@@ -43,6 +43,13 @@ public class AdoptionController {
         return ResponseEntity.ok(adoptionService.adoptListing(request));
     }
 
+    @PatchMapping("/listings/{listingId}/active")
+    public ResponseEntity<AdoptionListingResponseDto> updateListingAvailability(
+            @PathVariable UUID listingId,
+            @RequestParam boolean active) {
+        return ResponseEntity.ok(adoptionService.updateListingAvailability(listingId, active));
+    }
+
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<UserAdoptionRecordResponseDto>> getUserAdoptions(@PathVariable UUID userId) {
         return ResponseEntity.ok(adoptionService.getUserAdoptions(userId));

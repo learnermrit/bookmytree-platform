@@ -6,6 +6,7 @@ import com.bookmytree.platform.adoption.entity.AdoptionCategory;
 import com.bookmytree.platform.adoption.entity.AdoptionListing;
 import com.bookmytree.platform.adoption.repository.AdoptionListingRepository;
 import com.bookmytree.platform.adoption.repository.UserAdoptionRepository;
+import com.bookmytree.platform.auth.repository.UserRepository;
 import com.bookmytree.platform.metaverse.service.MetaverseService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,6 +33,9 @@ class AdoptionServiceTest {
     private UserAdoptionRepository userAdoptionRepository;
 
     @Mock
+    private UserRepository userRepository;
+
+    @Mock
     private MetaverseService metaverseService;
 
     @InjectMocks
@@ -55,6 +59,7 @@ class AdoptionServiceTest {
         listing.setActive(true);
 
         when(adoptionListingRepository.findById(listingId)).thenReturn(Optional.of(listing));
+        when(userAdoptionRepository.save(any())).thenAnswer(invocation -> invocation.getArgument(0));
         when(metaverseService.awardGreenPoints(any(), any(Integer.class), any(Double.class))).thenReturn(null);
 
         AdoptionCheckoutRequestDto request = new AdoptionCheckoutRequestDto();
@@ -84,6 +89,7 @@ class AdoptionServiceTest {
 
         when(adoptionListingRepository.save(any(AdoptionListing.class)))
                 .thenAnswer(invocation -> invocation.getArgument(0));
+        when(userRepository.findById(any())).thenReturn(Optional.empty());
 
         adoptionService.createListing(request);
 

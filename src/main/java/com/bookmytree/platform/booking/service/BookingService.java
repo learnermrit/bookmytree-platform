@@ -64,7 +64,9 @@ public class BookingService {
         }
 
         if (itemType == Order.ItemType.PERCENTAGE_SHARE) {
-            Integer percentageShare = request.getPercentageShare() != null ? request.getPercentageShare() : 25;
+            Integer percentageShare = request.getPercentageShare() != null
+                    ? request.getPercentageShare()
+                    : request.getQuantityOrPercentage() != null ? request.getQuantityOrPercentage() : 25;
             if (percentageShare <= 0 || percentageShare > 100) {
                 throw new BadRequestException("Percentage share must be between 1 and 100.");
             }

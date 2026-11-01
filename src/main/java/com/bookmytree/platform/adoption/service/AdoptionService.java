@@ -7,6 +7,8 @@ import com.bookmytree.platform.adoption.dto.UserAdoptionRecordResponseDto;
 import com.bookmytree.platform.adoption.entity.AdoptionListing;
 import com.bookmytree.platform.adoption.entity.AdoptionStatus;
 import com.bookmytree.platform.adoption.entity.UserAdoptionRecord;
+import com.bookmytree.platform.auth.entity.User;
+import com.bookmytree.platform.auth.repository.UserRepository;
 import com.bookmytree.platform.adoption.repository.AdoptionListingRepository;
 import com.bookmytree.platform.adoption.repository.UserAdoptionRepository;
 import com.bookmytree.platform.common.exception.BadRequestException;
@@ -28,6 +30,7 @@ public class AdoptionService {
 
     private final AdoptionListingRepository adoptionListingRepository;
     private final UserAdoptionRepository userAdoptionRepository;
+    private final UserRepository userRepository;
     private final MetaverseService metaverseService;
 
     @Transactional
@@ -79,6 +82,14 @@ public class AdoptionService {
     }
 
     @Transactional
+    public AdoptionListingResponseDto updateListingAvailability(UUID listingId, boolean active) {
+        AdoptionListing listing = adoptionListingRepository.findById(listingId)
+                .orElseThrow(() -> new ResourceNotFoundException("Adoption listing not found."));
+        listing.setActive(active);
+        return mapToListingResponse(adoptionListingRepository.save(listing));
+    }
+
+    @Transactional
     public UserAdoptionRecordResponseDto adoptListing(AdoptionCheckoutRequestDto request) {
         if (request.getQuantity() <= 0) {
             throw new BadRequestException("Quantity must be at least 1.");
@@ -124,9 +135,12 @@ public class AdoptionService {
     }
 
     private AdoptionListingResponseDto mapToListingResponse(AdoptionListing listing) {
+        User farmer = userRepository.findById(listing.getFarmerId()).orElse(null);
+
         return AdoptionListingResponseDto.builder()
                 .id(listing.getId())
                 .farmerId(listing.getFarmerId())
+                .farmerName(farmer != null ? farmer.getFullName() : "Farmer")
                 .category(listing.getCategory())
                 .title(listing.getTitle())
                 .name(listing.getName())
